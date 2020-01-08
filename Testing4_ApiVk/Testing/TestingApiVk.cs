@@ -72,5 +72,21 @@ namespace Testing4_ApiVk.Testing
             leapYear = userService.CheckLeapYear("225915811");
             Assert.AreEqual("Високосный", leapYear);
         }
+        
+        [Test]
+        public void GetAppByAndPopularAppId()
+        {
+            IAppRepository appRepository = new AppRepositoryVk();
+            appRepository.URL = "https://api.vk.com/method/";
+            AppService appService = new AppService(appRepository);
+            string popular = appService.GetPopularAppVk("4063926");
+            Assert.AreEqual("Очень популярно", popular);
+            
+            popular = appService.GetPopularAppVk("5297630");
+            Assert.AreEqual("Непопулярно", popular);
+            
+            popular = appService.GetPopularAppVk("4207803");
+            Assert.AreEqual("Популярно", popular);
+        }
     }
 }
