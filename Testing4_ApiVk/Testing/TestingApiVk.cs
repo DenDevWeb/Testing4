@@ -59,5 +59,18 @@ namespace Testing4_ApiVk.Testing
             popular = appService.GetPopularAppVk("4063928");
             Assert.AreEqual("Популярно", popular);
         }
+        
+        [Test]
+        public void GetUserAndDefineLeapYearById()
+        {
+            IUsersRepository userRepository = new UsersRepositoryVk();
+            userRepository.URL = "https://api.vk.com/method/";
+            UserService userService = new UserService(userRepository);
+            string leapYear = userService.CheckLeapYear("86031446");
+            Assert.AreEqual("Невисокосный", leapYear);
+            
+            leapYear = userService.CheckLeapYear("225915811");
+            Assert.AreEqual("Високосный", leapYear);
+        }
     }
 }
