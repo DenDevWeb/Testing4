@@ -33,7 +33,7 @@ namespace Testing4_ApiVk.Testing
         }
         
         [Test]
-        public void GetLeapYearFromServiceTest()//тест user сервиса с помощью мок репозитория
+        public void GetLeapYearFromServiceTest() //тест user сервиса с помощью мок репозитория
         {
             IUsersRepository userRepository = new UsersRepositoryMock();
             UserService userService = new UserService(userRepository);
@@ -42,6 +42,22 @@ namespace Testing4_ApiVk.Testing
             
             leapYear = userService.CheckLeapYear("225915811");
             Assert.AreEqual("Високосный", leapYear);
+        }
+        
+        [Test]
+        public void GetPopularAppFromServiceTest()//тест app сервиса с помощью мок репозитория
+        {
+            IAppRepository appRepository = new AppRepositoryMock();
+            AppService appService = new AppService(appRepository);
+            
+            string popular = appService.GetPopularAppVk("4063926");
+            Assert.AreEqual("Очень популярно", popular);
+            
+            popular = appService.GetPopularAppVk("4063927");
+            Assert.AreEqual("Непопулярно", popular);
+            
+            popular = appService.GetPopularAppVk("4063928");
+            Assert.AreEqual("Популярно", popular);
         }
     }
 }

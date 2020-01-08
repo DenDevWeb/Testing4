@@ -49,6 +49,7 @@
         </e>
         <e p="Program.cs" t="Include" />
         <e p="Repositories" t="Include">
+          <e p="AppRepositoryMock.cs" t="Include" />
           <e p="AppRepositoryVk.cs" t="Include" />
           <e p="IAppRepository.cs" t="Include" />
           <e p="IUsersRepository.cs" t="Include" />
@@ -56,6 +57,7 @@
           <e p="UsersRepositoryVk.cs" t="Include" />
         </e>
         <e p="Services" t="Include">
+          <e p="AppService.cs" t="Include" />
           <e p="UserService.cs" t="Include" />
         </e>
         <e p="Testing" t="Include">
