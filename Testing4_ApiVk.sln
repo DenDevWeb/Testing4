@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing4_ApiVk", "Testing4_ApiVk\Testing4_ApiVk.csproj", "{325EA0F4-9C64-4647-BB80-B20276210C3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockServer", "MockServer\MockServer.csproj", "{F511BA25-BE51-48CB-86E5-2BF3D3A66656}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{325EA0F4-9C64-4647-BB80-B20276210C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{325EA0F4-9C64-4647-BB80-B20276210C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{325EA0F4-9C64-4647-BB80-B20276210C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F511BA25-BE51-48CB-86E5-2BF3D3A66656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F511BA25-BE51-48CB-86E5-2BF3D3A66656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F511BA25-BE51-48CB-86E5-2BF3D3A66656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F511BA25-BE51-48CB-86E5-2BF3D3A66656}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
