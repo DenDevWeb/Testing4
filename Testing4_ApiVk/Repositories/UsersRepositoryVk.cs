@@ -9,11 +9,11 @@ namespace Testing4_ApiVk.Repositories
     {
         private string accessToken = "0de83f380e4f2e5bbef1ebb445c30f6dc0f55f0a407e2d8a32b2c76bca34263ac012c11f867144adf0f40";
 
-        public string baseURL { get; set; }
+        public string URL { get; set; }
         
         public User GetUserById(string id)
         {
-            string request = $"{baseURL}users.get?user_ids={id}&fields=bdate&access_token={accessToken}&v=5.103";
+            string request = $"{URL}users.get?user_ids={id}&fields=bdate&access_token={accessToken}&v=5.103";
             WebClient.WebClient webHelper = new WebClient.WebClient();
             string json = webHelper.SendRequest(request, "GET");
             return Parse(json);

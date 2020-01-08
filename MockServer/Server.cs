@@ -12,6 +12,10 @@ namespace MockServer
     {
         public List<T> response;
     }
+    struct ResponseApp<T>
+    {
+        public T response;
+    }
     public class Server
     {
         static void Main(string[] args)
@@ -81,6 +85,25 @@ namespace MockServer
                         }
                     };
                     SendMessageToClient(user,response);
+                    break;
+                case "/method/apps.get?app_id=4063926&access_token=0de83f380e4f2e5bbef1ebb445c30f6dc0f55f0a407e2d8a32b2c76bca34263ac012c11f867144adf0f40&v=5.103":
+                    ResponseApp<AppVk> app = new ResponseApp<AppVk>()
+                    {
+                        response = new AppVk()
+                        {
+                            items = new List<Items>()
+                            {
+                                new Items()
+                                {
+                                    id = "4063926",
+                                    genre = "Головоломка",
+                                    members_count = 1853250
+                                        
+                                }
+                            }
+                        }
+                    };
+                    SendMessageToClient(app,response);
                     break;
                 default:
                     string faild = "Failed!";

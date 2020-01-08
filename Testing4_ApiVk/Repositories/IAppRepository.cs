@@ -2,9 +2,9 @@
 
 namespace Testing4_ApiVk.Repositories
 {
-    public interface IUsersRepository
+    public interface IAppRepository
     {
-        User GetUserById(string id);
+        AppVk GetAppById(string id);
         string URL { get; set; }
     }
 }
