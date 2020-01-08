@@ -4,9 +4,14 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using MockServer.Models;
 
 namespace MockServer
 {
+    struct ResponseUser<T>
+    {
+        public List<T> response;
+    }
     public class Server
     {
         static void Main(string[] args)
@@ -59,6 +64,23 @@ namespace MockServer
                 case "/test":
                     string text = "Hello, world!";
                     SendMessageToClient(text, response);
+                    break;
+                case "/method/users.get?user_ids=261163818&fields=bdate&access_token=0de83f380e4f2e5bbef1ebb445c30f6dc0f55f0a407e2d8a32b2c76bca34263ac012c11f867144adf0f40&v=5.103":
+                    ResponseUser<User> user = new ResponseUser<User>()
+                    {
+                        response = new List<User>()
+                        {
+                            new User()
+                            {
+                                id = "261163818",
+                                first_name = "Денис",
+                                last_name = "Иванов",
+                                is_closed = false,
+                                bdate = "28.2.1998"
+                            }
+                        }
+                    };
+                    SendMessageToClient(user,response);
                     break;
                 default:
                     string faild = "Failed!";

@@ -6,9 +6,9 @@ using System.Net.Sockets;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
-namespace MockServer.Tests
+namespace MockServer.MockTesting
 {
-    public class MocTest
+    public class MockTest
     {
         [Test]
         public void ServerCreated() //проверка целостности и качества соединений в сети
