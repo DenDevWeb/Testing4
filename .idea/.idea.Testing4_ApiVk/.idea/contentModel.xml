@@ -52,7 +52,11 @@
           <e p="AppRepositoryVk.cs" t="Include" />
           <e p="IAppRepository.cs" t="Include" />
           <e p="IUsersRepository.cs" t="Include" />
+          <e p="UsersRepositoryMock.cs" t="Include" />
           <e p="UsersRepositoryVk.cs" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="UserService.cs" t="Include" />
         </e>
         <e p="Testing" t="Include">
           <e p="TestingApiVk.cs" t="Include" />
