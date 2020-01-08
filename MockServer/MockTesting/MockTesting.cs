@@ -18,6 +18,19 @@ namespace MockServer.Tests
             Assert.AreEqual(reply.Status, IPStatus.Success);
         }
         
-        
+        [Test]
+        public void ClientConnectedToServerAndReceiveMessage() //подключение клиента и получение сообщений
+        {
+            //Делает запрос к созданию универсальному идентификатору ресурса (URI)
+            WebRequest request = WebRequest.Create("http://localhost:8080/test");
+            request.Credentials = CredentialCache.DefaultCredentials;
+            WebResponse response = request.GetResponse(); //есть ли ответ с сервера
+            Stream stream = response.GetResponseStream(); //получмть поток вывода клиенту который присоеденился 
+            StreamReader reader = new StreamReader(stream); //прочитать ответ с сервера
+            string responseFromServer = reader.ReadToEnd();
+            Assert.AreEqual("\"Hello, world!\"",responseFromServer);
+            stream.Close();
+            response.Close();
+        }
     }
 }
